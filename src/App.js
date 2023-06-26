@@ -14,7 +14,7 @@ function App() {
 
   const ImageGallery = lazy(() => import('./ImageGallery.tsx'));
   return (
-    <div className="App">
+    <div className="app">
       <h1>Lazy Image Gallery</h1>
       <button onClick={handleClick} className='custom-button'>Load Gallery</button>
       {showGallery && (
