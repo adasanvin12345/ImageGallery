@@ -7,12 +7,12 @@ function App() {
 
   const handleClick = () => {
     // Dynamically import the ImageGallery component
-    import('./ImageGallery.tsx').then((module) => {
+    import('./ImageGallery').then((module) => {
       setShowGallery((prev) => (!prev));
     });
   };
 
-  const ImageGallery = lazy(() => import('./ImageGallery.tsx'));
+  const ImageGallery = lazy(() => import('./ImageGallery'));
   return (
     <div className="app">
       <h1>Lazy Image Gallery</h1>
