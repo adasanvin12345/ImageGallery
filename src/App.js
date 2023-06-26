@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React, { useState, lazy, Suspense } from 'react';
 import './App.css';
 
+
 function App() {
+  const [showGallery, setShowGallery] = useState(false);
+
+  const handleClick = () => {
+    // Dynamically import the ImageGallery component
+    import('./ImageGallery.tsx').then((module) => {
+      setShowGallery((prev) => (!prev));
+    });
+  };
+
+  const ImageGallery = lazy(() => import('./ImageGallery.tsx'));
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Lazy Image Gallery</h1>
+      <button onClick={handleClick} className='custom-button'>Load Gallery</button>
+      {showGallery && (
+        <Suspense fallback={<div>Loading...</div>}>
+          <ImageGallery />
+        </Suspense>
+      )}
     </div>
   );
 }
