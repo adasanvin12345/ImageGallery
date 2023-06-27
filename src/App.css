@@ -1,4 +1,4 @@
-.app {
+.App {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -19,7 +19,7 @@
 }
 
 .custom-button {
-  background-color: #005021;
+  background-color: #500000;
   color: #fff;
   padding: 10px 20px;
   border: none;

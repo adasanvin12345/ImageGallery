@@ -7,14 +7,14 @@ function App() {
 
   const handleClick = () => {
     // Dynamically import the ImageGallery component
-    import('./ImageGallery').then((module) => {
+    import('./ImageGallery.jsx').then((module) => {
       setShowGallery((prev) => (!prev));
     });
   };
 
-  const ImageGallery = lazy(() => import('./ImageGallery'));
+  const ImageGallery = lazy(() => import('./ImageGallery.jsx'));
   return (
-    <div className="app">
+    <div className="App">
       <h1>Lazy Image Gallery</h1>
       <button onClick={handleClick} className='custom-button'>Load Gallery</button>
       {showGallery && (
