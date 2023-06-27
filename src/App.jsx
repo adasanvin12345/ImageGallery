@@ -12,7 +12,7 @@ function App() {
     });
   };
 
-  // const ImageGallery = lazy(() => import('./ImageGallery'));
+  const ImageGallery = lazy(() => import('./ImageGallery'));
   return (
     <div className="app">
       <h1>Lazy Image Gallery</h1>
